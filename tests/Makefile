@@ -1,6 +1,7 @@
 TARGET=mc-test
 CXX=g++ -std=c++17
 CXXFLAGS= -Wall -g -MMD -I../include/
+HEADERS=../include/matrix_computations/Matrix.h
 LD=g++
 OBJS=test.o
 
@@ -11,7 +12,7 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(LD) -o $(TARGET) $(OBJS)
 
-test.o: test.cpp
+test.o: test.cpp $(HEADERS)
 	$(CXX) -c $(CXXFLAGS) test.cpp -o test.o
 
 run: ${TARGET}

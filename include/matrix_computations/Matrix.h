@@ -261,6 +261,10 @@ namespace matrix_computations {
             : Matrix<T>(order, order, init) {}
         virtual ~SquareMatrix() {}
 
+    private:
+	using Matrix<T>::augment;
+
+    public:
         std::size_t order() const { return Matrix<T>::numb_rows(); }
 
     //    void swap_row_and_column(std::size_t i, std::size_t j)
